@@ -2,3 +2,5 @@ pandas
 scikit-learn
 streamlit
 sklearn
+sklearn.feature_extraction
+sklearn.metrics.pairwise
