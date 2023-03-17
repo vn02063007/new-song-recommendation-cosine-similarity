@@ -19,7 +19,7 @@ st.markdown(
 
 
 # 1. Import database file
-data = pd.read_csv('C:\\Users\\Tom B\\Desktop\\module\\project 4 new approach\\database.csv')
+data = pd.read_csv('database.csv')
 
 # Reduce data size to 10,000 rows and reset the index
 data = data.sample(n=30000, random_state=42).reset_index(drop=True)
