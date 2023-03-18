@@ -3,20 +3,6 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Custom CSS for background image
-st.markdown(
-    """
-<style>
-    body {
-        background-image: url("https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-</style>
-""",
-    unsafe_allow_html=True,
-)
-
 
 # 1. Import database file
 data = pd.read_csv('database.csv')
@@ -83,8 +69,3 @@ if submit_button:
         for index, song in top_songs.iterrows():
             st.write(f"{song['name']} | {song['artists']}")
 
-    else:
-        st.error("Song or artist not found in the database. Here are 5 random song recommendations:")
-        random_songs = data.sample(n=5, random_state=42)
-        for index, song in random_songs.iterrows():
-            st.write(f"{song['name']} | {song['artists']}")
