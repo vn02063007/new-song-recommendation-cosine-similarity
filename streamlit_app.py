@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 data = pd.read_csv('database.csv')
 
 # Reduce data size to 10,000 rows and reset the index
-#data = data.sample(n=30000, random_state=42).reset_index(drop=True)
+data = data.sample(n=10000, random_state=42).reset_index(drop=True)
 
 # Combine relevant features into a single string for each song
 data['combined_features'] = data[['duration_ms', 'explicit', 'danceability', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'energy', 'liveness', 'valence', 'tempo']].apply(lambda x: ' '.join(x.astype(str)), axis=1)
